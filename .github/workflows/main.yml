@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
-        steps:
       - name: Display the path
         run: echo $(pwd)
         shell: bash
