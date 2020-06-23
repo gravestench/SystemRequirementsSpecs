@@ -27,13 +27,14 @@ contents={%
 }
 
 % font config
-\newfontfamily\headingfont[Path = fonts/ ]{exocetheavy}
-\newfontfamily\subheadingfont[Path = fonts/ ]{exocetheavy}
-\titleformat{\chapter}[display]
-  {\huge\headingfont}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-\titleformat*{\section}{\LARGE\headingfont}
-\titleformat*{\subsection}{\Large\headingfont}
+\newfontfamily\headingfont[Path = fonts/ ]{exocetheavy.ttf}
+\newfontfamily\subheadingfont[Path = fonts/ ]{exocetheavy.ttf}
 \renewcommand{\maketitlehooka}{\headingfont}
+
+% section header formatting
+\BeforeStartingTOC[toc]{\addtokomafont{disposition}{\small\rmfamily}}
+\addtokomafont{chapter}{\headingfont}
+\addtokomafont{section}{\headingfont}
 
 % highlight color config
 \definecolor{solaryellow}{rgb}{.99,.86,0}
