@@ -9,7 +9,7 @@
 \frontmatter
 \import{frontmatter/}{title-page.tex}
 \import{frontmatter/}{revision-history.tex}
-\import{frontmatter/}{todo.tex}
+\import{frontmatter/}{todo.tex} % todo markers only present in pdf output
 \import{frontmatter/}{toc.tex} % table of contents
 
 \mainmatter
@@ -21,9 +21,11 @@
 %\import{mainmatter/}{other-requirements.tex}
 
 \begin{appendices}
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 	\import{mainmatter/appendices/}{mpq-spec.tex}
 	\import{mainmatter/appendices/}{dcc.tex}
 	\import{mainmatter/appendices/}{animations.tex}
+	\import{mainmatter/appendices/}{lod-game-data.tex}
 	% using todo package instead of this appendix
 	% \import{mainmatter/appendices/}{tbd-list.tex}
 \end{appendices}
