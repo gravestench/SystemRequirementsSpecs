@@ -37,5 +37,6 @@ jobs:
           asset_path: ./srs.pdf
           asset_name: open-diablo-2-srs.pdf
           asset_content_type: application/pdf
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
 
 
