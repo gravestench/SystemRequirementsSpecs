@@ -16,13 +16,19 @@ jobs:
         with:
           root_file: srs.tex
           args: -lualatex --file-line-error --interaction=nonstopmode
+      - name: Generate build number
+        id: buildnumber
+        uses: einaregilsson/build-number@v2 
+        with:
+          token: ${{ secrets.github_token }}
+          prefix: build
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.sha }}
+          tag_name: ${{needs.buildnumber.outputs.build_number}}
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: true
